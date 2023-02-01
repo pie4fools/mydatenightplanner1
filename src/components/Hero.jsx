@@ -1,5 +1,4 @@
 import React from 'react'
-import Typed from 'react-typed'
 import Video from '../video/video.mp4'
 import { Link } from 'react-scroll'
 
