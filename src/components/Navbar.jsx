@@ -14,7 +14,7 @@ const Navbar = () => {
         x: 0,
         opacity: 1,
     }}
-    transition={{ duration: 1.5 }} src={mydatelogo} className='scale-[1]' alt="Logo of mydatenightplanner"></img>
+    transition={{ duration: 1.5 }} src={mydatelogo} className='scale-[1] pr-5' alt="Logo of mydatenightplanner"></img>
         <motion.ul
     initial={{
        x: 100,
@@ -24,8 +24,8 @@ const Navbar = () => {
         x: 0,
         opacity: 1,
     }}
-    transition={{ duration: 1.5 }} className='items-center justify-center py-6 pr-5 px-5'>
-            <button className="z-10 relative rounded-full border-2 border-white bg-transparent py-1.5 text-xs px-5 mr-2 uppercase text-white hover:bg-white hover:text-black transition ease-in-out">About</button>
+    transition={{ duration: 1.5 }} className='items-center justify-center py-6 pr-3 px-5'>
+            <button className="hidden sm:inline z-10 relative rounded-full border-2 border-white bg-transparent py-1.5 text-xs px-5 mr-5 uppercase text-white hover:bg-white hover:text-black transition ease-in-out">About</button>
             <button className="z-10 relative rounded-full border-2 border-white bg-transparent py-1.5 text-xs px-5 uppercase text-white hover:bg-white hover:text-black transition ease-in-out">Plan</button>
         </motion.ul>
     </div>
