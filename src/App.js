@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Aboutpage from "./components/Aboutpage";
 import Footer from "./components/Footer";
+import Formpage from "./components/Formpage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <Hero />
       <Aboutpage />
+      <Formpage />
       <Footer />
     </div>
   );
