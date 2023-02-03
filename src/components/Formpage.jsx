@@ -1,13 +1,12 @@
-import React from "react"
+import { useState } from "react"
 import { useForm } from 'react-hook-form'
-
-
+import ButtonAct from "./ButtonAct"
 
 const Formpage = () => {
-  const [formStep, setFormStep] = React.useState(0)
+  const [formStep, setFormStep] = useState(0)
   const { watch,
-    register, 
-    formState: {errors, isValid }, 
+    register,
+    formState: { errors, isValid },
   } = useForm({ mode: "all" })
   const completeFormStep = () => {
     setFormStep(cur => cur + 1)
@@ -23,7 +22,7 @@ const Formpage = () => {
           type="button"
           className="mt-6 bg-red-400 text-white rounded md:px-8 md:py-6 py-5 w-full disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
-          Plan My Date 
+          Plan My Date
         </button>
       )
     } else {
@@ -34,7 +33,7 @@ const Formpage = () => {
           type="button"
           className="mt-6 bg-red-400 text-white rounded md:px-8 md:py-6 py-5 sm:py-3 w-full disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
-          Next Step 
+          Next Step
         </button>
       )
     }
@@ -58,223 +57,231 @@ const Formpage = () => {
         <div className="px-16 py-10">
           <form>
             {formStep >= 0 && (
-            <section className={formStep === 0 ? "block" : "hidden"}>
-              <h2 className="font-semibold text-3xl mb-8">
-              Name
-              </h2>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Name"
-                className="text-input"
-                {...register("username", {
-                  required: {
-                  value: true,
-                  message: "Please enter your name",
-                  },
-                })}
-              />
+              <section className={formStep === 0 ? "block" : "hidden"}>
+                <h2 className="font-semibold text-3xl mb-8">
+                  Name
+                </h2>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Name"
+                  className="text-input"
+                  {...register("username", {
+                    required: {
+                      value: true,
+                      message: "Please enter your name",
+                    },
+                  })}
+                />
                 {errors.username && <p className="text-red-600 text-sm my-2">{errors.username.message}</p>}
-            </section>
+              </section>
             )}
             {formStep >= 1 && (
-            <section className={formStep === 1 ? "block" : "hidden"}>
-            <h2 className="font-semibold text-3xl mb-8">Location</h2>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              placeholder="Location"
-              className="text-input"
-              {...register("address", {
-                required: {
-                value: true,
-                message: "Please enter a location",
-                },
-              })}
-            />
-            {errors.address && <p className="text-red-600 text-sm my-2">{errors.address.message}</p>}
-            </section>
+              <section className={formStep === 1 ? "block" : "hidden"}>
+                <h2 className="font-semibold text-3xl mb-8">Location</h2>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Location"
+                  className="text-input"
+                  {...register("address", {
+                    required: {
+                      value: true,
+                      message: "Please enter a location",
+                    },
+                  })}
+                />
+                {errors.address && <p className="text-red-600 text-sm my-2">{errors.address.message}</p>}
+              </section>
             )}
             {formStep >= 2 && (
-            <section className={formStep === 2 ? "grid grid-cols-2 gap-2 text-center" : "hidden"}>
-            <h2 className="font-semibold md:text-3xl sm:text-2xl italic font-serif">Activities</h2>
-            <label htmlFor="adventures" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-3 text-black hover:bg-black hover:text-white transition ease-in-out">Adventures</label>
-              <input
-              id="adventures"
-              name="adventures"
-              type="checkbox"
-              className="text-input hidden"
-              {...register("adventures", { 
-              })}
-              />
-              <label htmlFor="drinks" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Drinks</label>
-              <input
-              id="drinks"
-              name="drinks"
-              type="checkbox"
-              className="text-input hidden"
-              {...register("drinks", {
-              })}
-              />
-              <label htmlFor="romantic" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Romantic</label>
-              <input
-              id="romantic"
-              name="romantic"
-              type="checkbox"
-              className="text-input hidden"
-              {...register("romantic", {
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
-              <label htmlFor="adventure" className="z-10 relative rounded-full border-2 border-black bg-transparent py-1.5 text-xs px-5 text-black hover:bg-black hover:text-white transition ease-in-out">Adventure</label>
-              <input
-              id="address"
-              name="address"
-              type="checkbox"
-              placeholder="Location"
-              className="text-input hidden"
-              {...register("address", {
-                
-              })}
-              />
+              <section className={formStep === 2 ? "grid grid-cols-2 gap-2 text-center" : "hidden"}>
+                <h2 className="font-semibold md:text-4xl sm:text-2xl italic font-serif animate-pulse">Activities</h2>
+                <ButtonAct htmlFor="adventure" name="Adventure" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                id="adventure"
+                name="adventure"
+                type="checkbox"
+                className="text-input hidden"
+                {...register("adventure", {
+                })}
+                />
+                <ButtonAct htmlFor="athome" name="From Home" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                id="athome"
+                name="athome"
+                type="checkbox"
+                className="text-input hidden"
+                {...register("athome", {
+                })}
+                />
+                <ButtonAct htmlFor="drinks" name="Drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                id="drinks"
+                name="drinks"
+                type="checkbox"
+                className="text-input hidden"
+                {...register("drinks", {
+                })}
+                />
+                <ButtonAct htmlFor="romantic" name="Romantic" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="romantic"
+                  name="romantic"
+                  type="checkbox"
+                  className="text-input hidden"
+                  {...register("romantic", {
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
+                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="address"
+                  name="address"
+                  type="checkbox"
+                  placeholder="Location"
+                  className="text-input hidden"
+                  {...register("address", {
+
+                  })}
+                />
               </section>
-              )}
-              {formStep >= 3 && (
+            )}
+            {formStep >= 3 && (
               <section className={formStep === 3 ? "block" : "hidden"}>
-              <h2 className="font-semibold text-1xl mb-8 text-center">Congratulations! Your date night is being planned</h2>
+                <h2 className="font-semibold text-1xl mb-8 text-center">Congratulations! Your date night is being planned</h2>
               </section>
             )}
             {renderButton()}

@@ -19,8 +19,8 @@ const Aboutpage = () => {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once:true }}
-        className='text-white max-w-[1024px] mt-5 pt-20 w-full mx-auto text-left flex flex-col justify-center'>
-            <h2 className='text-red-400 md:text-4xl sm:text-4xl text-xl font-extrabold py-4 font-raleway uppercase px-7'>About</h2>
+        className='text-white max-w-[1024px] mt-5 w-full mx-auto flex flex-col justify-center'>
+            <h2 className='text-red-400 md:text-4xl sm:text-4xl text-xl font-extrabold py-4 font-raleway uppercase px-7 text-center'>About</h2>
             <p className='text-gray-300 md:text-sm sm:text-1xl py-4 font-semibold font-karla px-7'>You have the date, now what?  My Date Night Planner is here to create an experience you and your date will remember forever.  We take the stress out of planning so that you may enjoy your date night.</p>
             <p className='text-gray-300 md:text-sm sm:text-1xl py-4 font-semibold font-karla px-7'>Our dates are individualized just for you.  From first dates,  renewing the spark dates with your longtime love, or a night out with friends, we are here to make memories from first to forever.</p>
             <p className='text-gray-300 md:text-sm sm:text-1xl py-4 font-semibold font-karla px-7'>We will send you a detailed plan of locations, specify dress requirements, and make reservations if necessary.</p>
