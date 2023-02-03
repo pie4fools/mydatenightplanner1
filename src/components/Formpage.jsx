@@ -1,11 +1,10 @@
 import React from "react"
 import { useForm } from 'react-hook-form'
-import { useState } from "react"
+
 
 
 const Formpage = () => {
   const [formStep, setFormStep] = React.useState(0)
-  const [checked, setChecked] = React.useState(true);
   const { watch,
     register, 
     formState: {errors, isValid }, 
