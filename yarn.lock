@@ -8139,6 +8139,11 @@ react-typed@^1.2.0:
     prop-types "^15.6.0"
     typed.js "^2.0.6"
 
+react-use-state@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-use-state/-/react-use-state-0.0.1.tgz#a3c1515907b231e9b01b3034fe21b189ab5b00bf"
+  integrity sha512-ifNidDsXy5LB6lJNsYOxDPK71nAOrmWUWAcT5HU+2lcXa7dAJP9G989zm7vcM1Gt49PP2I7m9vlkOdHPCeZauQ==
+
 react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
