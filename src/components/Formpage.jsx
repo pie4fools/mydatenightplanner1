@@ -5,8 +5,7 @@ import Typed from "react-typed"
 
 const Formpage = () => {
   const [formStep, setFormStep] = useState(0)
-  const { watch,
-    register,
+  const { register,
     formState: { errors, isValid },
   } = useForm({ mode: "all" })
   const completeFormStep = () => {
