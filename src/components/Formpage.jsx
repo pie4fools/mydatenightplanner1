@@ -244,7 +244,7 @@ const Formpage = () => {
                   {...register("tours", {
                   })}
                 />
-                <ButtonAct icon={<FcNightLandscape className="mr-3"/>} htmlFor="nightlife" name="Night Life" xlmns=""/>
+                <ButtonAct icon={<FcNightLandscape className="mr-3"/>} htmlFor="nightlife" name="Night" xlmns=""/>
                 <input
                   id="nightlife"
                   name="nightlife"
