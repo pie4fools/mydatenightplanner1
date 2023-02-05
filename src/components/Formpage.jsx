@@ -2,6 +2,11 @@ import { useState } from "react"
 import { useForm } from 'react-hook-form'
 import ButtonAct from "./ButtonAct"
 import Typed from "react-typed"
+import { FcGlobe, FcHeadset, FcHome, FcLike, FcCollaboration, FcLandscape,FcLikePlaceholder, FcCloseUpMode, FcMusic, FcSportsMode, FcHighPriority, FcLock, FcConferenceCall, FcNightLandscape } from 'react-icons/fc'
+import { FaWineBottle, FaCoins } from 'react-icons/fa'
+import { GiTopHat, GiTwoCoins } from 'react-icons/gi'
+import { RiCoinFill } from 'react-icons/ri'
+
 
 const Formpage = () => {
   const [formStep, setFormStep] = useState(0)
@@ -12,9 +17,9 @@ const Formpage = () => {
     setFormStep(cur => cur + 1)
   }
   const renderButton = () => {
-    if (formStep > 2) {
+    if (formStep > 3) {
       return undefined
-    } else if (formStep === 2) {
+    } else if (formStep === 3) {
       return (
         <button
           disabled={!isValid}
@@ -58,8 +63,6 @@ const Formpage = () => {
           <form>
             {formStep >= 0 && (
               <section className={formStep === 0 ? "block" : "hidden"}>
-                
-                
                 <input
                   type="text"
                   id="username"
@@ -95,9 +98,9 @@ const Formpage = () => {
               </section>
             )}
             {formStep >= 2 && (
-              <section className={formStep === 2 ? "grid grid-cols-1 md:grid-cols-2 gap-1 text-center -mx-5 lg:mx-0" : "hidden"}>
-                <h2 className="font-thin md:text-4xl sm:text-2xl opacity-50 text-xl italic font-serif">Choose one or more</h2>
-                <ButtonAct htmlFor="adventure" name="Adventure" xlmns="http://www.w3.org/2000/svg"/>
+              <section className={formStep === 2 ? "grid grid-cols-2 md:grid-cols-2 gap-1 text-center align-center -mx-5 lg:mx-0" : "hidden"}>
+                <h2 className="font-thin text-md italic font-serif">Choose one or more</h2>
+                <ButtonAct icon={<FcGlobe className="mr-3"/>} htmlFor="adventure" name="Adventure" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                 id="adventure"
                 name="adventure"
@@ -106,7 +109,7 @@ const Formpage = () => {
                 {...register("adventure", {
                 })}
                 />
-                <ButtonAct htmlFor="athome" name="From Home" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcHome className="mr-3"/>} htmlFor="athome" name="From Home" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                 id="athome"
                 name="athome"
@@ -115,7 +118,7 @@ const Formpage = () => {
                 {...register("athome", {
                 })}
                 />
-                <ButtonAct htmlFor="drinks" name="Drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinks" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                 id="drinks"
                 name="drinks"
@@ -124,7 +127,7 @@ const Formpage = () => {
                 {...register("drinks", {
                 })}
                 />
-                <ButtonAct htmlFor="romantic" name="Romantic" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLike className="mr-3"/>} htmlFor="romantic" name="Romantic" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                   id="romantic"
                   name="romantic"
@@ -133,151 +136,160 @@ const Formpage = () => {
                   {...register("romantic", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcCollaboration className="mr-3"/>} htmlFor="friends" name="Friends" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="friends"
+                  name="friends"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("friends", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLandscape className="mr-3"/>} htmlFor="Getaway" name="Getaway" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="getaway"
+                  name="getaway"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
+                  {...register("getaway", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLikePlaceholder className="mr-3"/>} htmlFor="First Date" name="First Date" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="First Date"
+                  name="First Date"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("First Date", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcCloseUpMode className="mr-3"/>} htmlFor="couple" name="Couple" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="couple"
+                  name="couple"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("couple", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcMusic className="mr-3"/>} htmlFor="live music" name="Live Music" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="live music"
+                  name="live music"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("live music", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcMusic className="mr-3"/>} htmlFor="dancing" name="Dancing" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="dancing"
+                  name="dancing"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("dancing", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcSportsMode className="mr-3"/>} htmlFor="sports" name="Sports" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="sports"
+                  name="sports"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("sports", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcHeadset className="mr-3"/>} htmlFor="gaming" name="Gaming" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="gaming"
+                  name="gaming"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("gaming", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk Takers" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="risktakers"
+                  name="risktakers"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("risktakers", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<GiTopHat className="mr-3"/>} htmlFor="fancy" name="Fancy" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="Fancy"
+                  name="Fancy"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("fancy", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLock className="mr-3"/>} htmlFor="privacy" name="Privacy" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="privacy"
+                  name="privacy"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("privacy", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcConferenceCall className="mr-3"/>} htmlFor="tours" name="Tours" xlmns="http://www.w3.org/2000/svg"/>
                 <input
-                  id="address"
-                  name="address"
+                  id="tours"
+                  name="tours"
                   type="checkbox"
-                  placeholder="Location"
                   className="text-input hidden"
-                  {...register("address", {
-
+                  {...register("tours", {
                   })}
                 />
-                <ButtonAct htmlFor="drinks" name="drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcNightLandscape className="mr-3"/>} htmlFor="nightlife" name="Night Life" xlmns=""/>
                 <input
-                  id="address"
-                  name="address"
-                  type="checkbox"
-                  placeholder="Location"
+                  id="nightlife"
+                  name="nightlife"
+                  type="nightlife"
+                  placeholder="nightlife"
                   className="text-input hidden"
-                  {...register("address", {
+                  {...register("nightlife", {
 
                   })}
                 />
               </section>
             )}
             {formStep >= 3 && (
+              <section className={formStep === 3 ? "block grid gap-4 text-center align-center mx-7" : "hidden"}>
+                <h2 className="font-sans font-light text-3xl text-center align-center justify-center italic">Budget</h2>
+                <ButtonAct icon={<RiCoinFill className="mr-3 fill-yellow-400"/>} htmlFor="over25" name="$25" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="over25"
+                  name="over25"
+                  type="checkbox"
+                  className="text-input hidden"
+                  {...register("over25", {
+                  })}
+                />
+                <ButtonAct icon={<GiTwoCoins className="mr-3 fill-yellow-400"/>} htmlFor="under50" name="$50" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="under50"
+                  name="under50"
+                  type="under50"
+                  className="text-input hidden"
+                  {...register("under50", {
+                  })}
+                />
+                <ButtonAct icon={<FaCoins className="mr-3 fill-yellow-400"/>} htmlFor="over100" name="$100 +" xlmns="http://www.w3.org/2000/svg"/>
+                <input
+                  id="over100"
+                  name="over100"
+                  type="checkbox"
+                  className="text-input hidden"
+                  {...register("over100", {
+                  })}
+                />
+              </section>
+            )}
+            {formStep >= 4 && (
               <section className={formStep === 3 ? "block mb-9" : "hidden"}>
                 <div className="text-center text-gray-700 mb-10 ">
                 <Typed
