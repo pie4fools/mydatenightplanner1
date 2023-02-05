@@ -109,7 +109,7 @@ const Formpage = () => {
                 {...register("adventure", {
                 })}
                 />
-                <ButtonAct icon={<FcHome className="mr-3"/>} htmlFor="athome" name="From Home" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcHome className="mr-3"/>} htmlFor="athome" name="Home" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                 id="athome"
                 name="athome"
@@ -154,7 +154,7 @@ const Formpage = () => {
                   {...register("getaway", {
                   })}
                 />
-                <ButtonAct icon={<FcLikePlaceholder className="mr-3"/>} htmlFor="First Date" name="First Date" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLikePlaceholder className="mr-3"/>} htmlFor="First Date" name="1st Date" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                   id="First Date"
                   name="First Date"
@@ -172,7 +172,7 @@ const Formpage = () => {
                   {...register("couple", {
                   })}
                 />
-                <ButtonAct icon={<FcMusic className="mr-3"/>} htmlFor="live music" name="Live Music" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcMusic className="mr-3"/>} htmlFor="live music" name="Music" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                   id="live music"
                   name="live music"
@@ -208,7 +208,7 @@ const Formpage = () => {
                   {...register("gaming", {
                   })}
                 />
-                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk Takers" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                   id="risktakers"
                   name="risktakers"
@@ -290,7 +290,7 @@ const Formpage = () => {
               </section>
             )}
             {formStep >= 4 && (
-              <section className={formStep === 3 ? "block mb-9" : "hidden"}>
+              <section className={formStep === 4 ? "block mb-9" : "hidden"}>
                 <div className="text-center text-gray-700 mb-10 ">
                 <Typed
                 className='md:text-3xl sm:text-4xl text-xl font-md align-center justify-center mx-auto font-sans'
