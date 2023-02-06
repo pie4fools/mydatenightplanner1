@@ -8,6 +8,7 @@ import { GiTopHat, GiTwoCoins } from 'react-icons/gi'
 import { RiCoinFill } from 'react-icons/ri'
 
 
+
 const Formpage = () => {
   const [formStep, setFormStep] = useState(0)
   const { register,
@@ -44,7 +45,7 @@ const Formpage = () => {
     }
   }
   return (
-    <div className="sm:min-w-[500px] md:min-h-screen bg-red-900 flex flex-col items-start text-gray-900 antialiased relative">
+    <div className="sm:min-w-[500px] min-h-[800px] md:min-h-screen bg-red-900 flex flex-col items-start text-gray-900 antialiased relative">
       <div
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 80%, 0% 100%)",
@@ -68,7 +69,7 @@ const Formpage = () => {
                   id="username"
                   name="username"
                   placeholder="Name"
-                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-100 text-gray-800 focus:outline-none"
+                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
                   {...register("username", {
                     required: {
                       value: true,
@@ -81,16 +82,50 @@ const Formpage = () => {
             )}
             {formStep >= 1 && (
               <section className={formStep === 1 ? "block" : "hidden"}>
+                <label className="text-gray-800 font-thin font-sans text-xl">From</label>
+                <input type="date"
+                className="w-full px-3 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-gray-100 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                {...register("datefrom", {
+                  valueAsDate: true,
+                })}
+                />
+                <label className="text-gray-800 font-thin font-sans text-xl">To</label>
+                <input type="date"
+                class="w-full px-3 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-gray-100 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                {...register("dateto", {
+                  valueAsDate: true,
+                })}
+                />
+                <label className="text-gray-800 font-thin font-sans text-xl">When</label>
+                <input type="time"
+                class="w-full px-3 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-gray-100 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                {...register("time", {
+                  valueAsDate: true,
+                })}
+                />
                 <input
                   type="text"
-                  id="address"
-                  name="address"
-                  placeholder="Location"
-                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-100 text-gray-800 focus:outline-none"
-                  {...register("address", {
+                  id="city"
+                  name="city"
+                  placeholder="City"
+                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  {...register("city", {
                     required: {
                       value: true,
-                      message: "Please enter a location",
+                      message: "Please Enter City",
+                    },
+                  })}
+                />
+                <input
+                  type="text"
+                  id="state"
+                  name="state"
+                  placeholder="State"
+                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  {...register("state", {
+                    required: {
+                      value: true,
+                      message: "Please Enter State",
                     },
                   })}
                 />
@@ -99,8 +134,7 @@ const Formpage = () => {
             )}
             {formStep >= 2 && (
               <section className={formStep === 2 ? "grid grid-cols-2 md:grid-cols-2 gap-1 text-center align-center -mx-5 lg:mx-0" : "hidden"}>
-                <h2 className="font-thin text-md italic font-serif">Choose one or more</h2>
-                <ButtonAct icon={<FcGlobe className="mr-2"/>} htmlFor="adventure" name="Adventure" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcGlobe className="mr-2"/>} htmlFor="adventure" name="Adventure"/>
                 <input
                 id="adventure"
                 name="adventure"
@@ -109,7 +143,7 @@ const Formpage = () => {
                 {...register("adventure", {
                 })}
                 />
-                <ButtonAct icon={<FcHome className="mr-3"/>} htmlFor="athome" name="Home" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcHome className="mr-3"/>} htmlFor="athome" name="Home"/>
                 <input
                 id="athome"
                 name="athome"
@@ -118,7 +152,7 @@ const Formpage = () => {
                 {...register("athome", {
                 })}
                 />
-                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinks" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinks"/>
                 <input
                 id="drinks"
                 name="drinks"
@@ -127,7 +161,7 @@ const Formpage = () => {
                 {...register("drinks", {
                 })}
                 />
-                <ButtonAct icon={<FcLike className="mr-3"/>} htmlFor="romantic" name="Romantic" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLike className="mr-2"/>} htmlFor="romantic" name="Romantic"/>
                 <input
                   id="romantic"
                   name="romantic"
@@ -136,7 +170,7 @@ const Formpage = () => {
                   {...register("romantic", {
                   })}
                 />
-                <ButtonAct icon={<FcCollaboration className="mr-3"/>} htmlFor="friends" name="Friends" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcCollaboration className="mr-3"/>} htmlFor="friends" name="Friends"/>
                 <input
                   id="friends"
                   name="friends"
@@ -145,7 +179,7 @@ const Formpage = () => {
                   {...register("friends", {
                   })}
                 />
-                <ButtonAct icon={<FcLandscape className="mr-3"/>} htmlFor="Getaway" name="Getaway" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLandscape className="mr-2"/>} htmlFor="Getaway" name="Getaway"/>
                 <input
                   id="getaway"
                   name="getaway"
@@ -154,7 +188,7 @@ const Formpage = () => {
                   {...register("getaway", {
                   })}
                 />
-                <ButtonAct icon={<FcLikePlaceholder className="mr-3"/>} htmlFor="First Date" name="1st Date" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLikePlaceholder className="mr-3"/>} htmlFor="First Date" name="New"/>
                 <input
                   id="First Date"
                   name="First Date"
@@ -163,7 +197,7 @@ const Formpage = () => {
                   {...register("First Date", {
                   })}
                 />
-                <ButtonAct icon={<FcCloseUpMode className="mr-3"/>} htmlFor="couple" name="Couple" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcCloseUpMode className="mr-3"/>} htmlFor="couple" name="Couple"/>
                 <input
                   id="couple"
                   name="couple"
@@ -172,7 +206,7 @@ const Formpage = () => {
                   {...register("couple", {
                   })}
                 />
-                <ButtonAct icon={<FcMusic className="mr-3"/>} htmlFor="live music" name="Music" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcMusic className="mr-3"/>} htmlFor="live music" name="Music"/>
                 <input
                   id="live music"
                   name="live music"
@@ -181,7 +215,7 @@ const Formpage = () => {
                   {...register("live music", {
                   })}
                 />
-                <ButtonAct icon={<FcMusic className="mr-3"/>} htmlFor="dancing" name="Dancing" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcMusic className="mr-2"/>} htmlFor="dancing" name="Dancing"/>
                 <input
                   id="dancing"
                   name="dancing"
@@ -190,7 +224,7 @@ const Formpage = () => {
                   {...register("dancing", {
                   })}
                 />
-                <ButtonAct icon={<FcSportsMode className="mr-3"/>} htmlFor="sports" name="Sports" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcSportsMode className="mr-3"/>} htmlFor="sports" name="Sports"/>
                 <input
                   id="sports"
                   name="sports"
@@ -199,7 +233,7 @@ const Formpage = () => {
                   {...register("sports", {
                   })}
                 />
-                <ButtonAct icon={<FcHeadset className="mr-3"/>} htmlFor="gaming" name="Gaming" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcHeadset className="mr-3"/>} htmlFor="gaming" name="Gaming"/>
                 <input
                   id="gaming"
                   name="gaming"
@@ -208,7 +242,7 @@ const Formpage = () => {
                   {...register("gaming", {
                   })}
                 />
-                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk"/>
                 <input
                   id="risktakers"
                   name="risktakers"
@@ -217,7 +251,7 @@ const Formpage = () => {
                   {...register("risktakers", {
                   })}
                 />
-                <ButtonAct icon={<GiTopHat className="mr-3"/>} htmlFor="fancy" name="Fancy" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<GiTopHat className="mr-3"/>} htmlFor="fancy" name="Fancy"/>
                 <input
                   id="Fancy"
                   name="Fancy"
@@ -226,7 +260,7 @@ const Formpage = () => {
                   {...register("fancy", {
                   })}
                 />
-                <ButtonAct icon={<FcLock className="mr-3"/>} htmlFor="privacy" name="Privacy" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcLock className="mr-3"/>} htmlFor="privacy" name="Privacy"/>
                 <input
                   id="privacy"
                   name="privacy"
@@ -235,7 +269,7 @@ const Formpage = () => {
                   {...register("privacy", {
                   })}
                 />
-                <ButtonAct icon={<FcConferenceCall className="mr-3"/>} htmlFor="tours" name="Tours" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcConferenceCall className="mr-3"/>} htmlFor="tours" name="Tours"/>
                 <input
                   id="tours"
                   name="tours"
@@ -244,7 +278,7 @@ const Formpage = () => {
                   {...register("tours", {
                   })}
                 />
-                <ButtonAct icon={<FcNightLandscape className="mr-3"/>} htmlFor="nightlife" name="Night" xlmns=""/>
+                <ButtonAct icon={<FcNightLandscape className="mr-3"/>} htmlFor="nightlife" name="Night"/>
                 <input
                   id="nightlife"
                   name="nightlife"
@@ -252,15 +286,14 @@ const Formpage = () => {
                   placeholder="nightlife"
                   className="text-input hidden"
                   {...register("nightlife", {
-
                   })}
                 />
               </section>
             )}
             {formStep >= 3 && (
-              <section className={formStep === 3 ? "grid gap-4 text-center align-center mx-7" : "hidden"}>
-                <h2 className="font-sans font-light text-3xl text-center align-center justify-center italic">Budget</h2>
-                <ButtonAct icon={<RiCoinFill className="mr-3 fill-yellow-400"/>} htmlFor="over25" name="$25" xlmns="http://www.w3.org/2000/svg"/>
+              <section className={formStep === 3 ? "grid gap-4 text-center align-center justify-center mx-7" : "hidden"}>
+                {/* <h2 className="font-sans font-light text-3xl text-center align-center justify-center italic">Budget</h2> */}
+                <ButtonAct icon={<RiCoinFill className="mr-3 fill-yellow-400"/>} htmlFor="over25" name="$25"/>
                 <input
                   id="over25"
                   name="over25"
@@ -269,7 +302,7 @@ const Formpage = () => {
                   {...register("over25", {
                   })}
                 />
-                <ButtonAct icon={<GiTwoCoins className="mr-3 fill-yellow-400"/>} htmlFor="under50" name="$50" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<GiTwoCoins className="mr-3 fill-yellow-400"/>} htmlFor="under50" name="$50"/>
                 <input
                   id="under50"
                   name="under50"
@@ -278,13 +311,22 @@ const Formpage = () => {
                   {...register("under50", {
                   })}
                 />
-                <ButtonAct icon={<FaCoins className="mr-3 fill-yellow-400"/>} htmlFor="over100" name="$100 +" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FaCoins className="mr-3 fill-yellow-400"/>} htmlFor="over100" name="$100 +"/>
                 <input
                   id="over100"
                   name="over100"
                   type="checkbox"
                   className="text-input hidden"
                   {...register("over100", {
+                  })}
+                />
+                <input
+                  id="extra"
+                  name="extra"
+                  type="text"
+                  placeholder="Extra Details..."
+                  className="text-input rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  {...register("extra", {
                   })}
                 />
               </section>
@@ -294,7 +336,7 @@ const Formpage = () => {
                 <div className="text-center text-gray-700 mb-10 ">
                 <Typed
                 className='md:text-3xl sm:text-4xl text-xl font-md align-center justify-center mx-auto font-sans'
-                strings={['Gathering Data . .', 'Finding Activities Near You', 'Packaging. . .', "Sending To Scheduler. . ."]}
+                strings={['Gathering Data...', 'Activities Near You..', 'Packaging...', "Sending..."]}
                 typeSpeed={70}
                 backSpeed={150}
                 loop/>

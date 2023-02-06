@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 
-const ButtonAct = ({ htmlFor, name, xmlns, icon }) => {
+const ButtonAct = ({ htmlFor, name, icon }) => {
   const [toggle, setToggle] = useState(false);
   const toggleButton = () => setToggle(!toggle);
   return (
