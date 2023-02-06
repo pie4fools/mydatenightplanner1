@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Aboutpage from "./components/Aboutpage";
-import Footer from "./components/Footer";
 import Formpage from "./components/Formpage";
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
       <Hero />
       <Aboutpage />
       <Formpage />
-      <Footer />
     </div>
   );
 }

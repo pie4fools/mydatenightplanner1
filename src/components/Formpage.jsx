@@ -6,6 +6,7 @@ import { FcGlobe, FcHeadset, FcHome, FcLike, FcCollaboration, FcLandscape,FcLike
 import { FaWineBottle, FaCoins } from 'react-icons/fa'
 import { GiTopHat, GiTwoCoins } from 'react-icons/gi'
 import { RiCoinFill } from 'react-icons/ri'
+import DatePicker from 'react-datepicker';
 
 
 const Formpage = () => {
@@ -55,7 +56,7 @@ const Formpage = () => {
       <div className="mx-auto z-10 md:mt-48 mt-28 text-center">
         <h1 className="text-white text-5xl font-thin">Plan</h1>
         <p className="text-white mt-2 italic">
-          Get a custom date in 3 easy steps!
+          Get a custom date in a few easy steps!
         </p>
       </div>
       <div className="max-w-xl w-full mt-24 mb-24 rounded-lg shadow-2xl bg-white mx-auto overflow-hidden z-10">
@@ -100,7 +101,7 @@ const Formpage = () => {
             {formStep >= 2 && (
               <section className={formStep === 2 ? "grid grid-cols-2 md:grid-cols-2 gap-1 text-center align-center -mx-5 lg:mx-0" : "hidden"}>
                 <h2 className="font-thin text-md italic font-serif">Choose one or more</h2>
-                <ButtonAct icon={<FcGlobe className="mr-3"/>} htmlFor="adventure" name="Adventure" xlmns="http://www.w3.org/2000/svg"/>
+                <ButtonAct icon={<FcGlobe className="mr-2"/>} htmlFor="adventure" name="Adventure" xlmns="http://www.w3.org/2000/svg"/>
                 <input
                 id="adventure"
                 name="adventure"
