@@ -6,7 +6,6 @@ import { FcGlobe, FcHeadset, FcHome, FcLike, FcCollaboration, FcLandscape,FcLike
 import { FaWineBottle, FaCoins } from 'react-icons/fa'
 import { GiTopHat, GiTwoCoins } from 'react-icons/gi'
 import { RiCoinFill } from 'react-icons/ri'
-import DatePicker from 'react-datepicker';
 
 
 const Formpage = () => {
@@ -259,7 +258,7 @@ const Formpage = () => {
               </section>
             )}
             {formStep >= 3 && (
-              <section className={formStep === 3 ? "block grid gap-4 text-center align-center mx-7" : "hidden"}>
+              <section className={formStep === 3 ? "grid gap-4 text-center align-center mx-7" : "hidden"}>
                 <h2 className="font-sans font-light text-3xl text-center align-center justify-center italic">Budget</h2>
                 <ButtonAct icon={<RiCoinFill className="mr-3 fill-yellow-400"/>} htmlFor="over25" name="$25" xlmns="http://www.w3.org/2000/svg"/>
                 <input
