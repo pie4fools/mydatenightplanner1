@@ -70,7 +70,7 @@ const Formpage = () => {
                   id="username"
                   name="username"
                   placeholder="Name"
-                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-300 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
                   {...register("username", {
                     required: {
                       value: true,
@@ -84,14 +84,15 @@ const Formpage = () => {
                   id="phonenumber"
                   name="phonenumber"
                   placeholder="Phone Number"
-                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-300 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
                   {...register("phonenumber", {
                     required: {
                       value: true,
-                      message: "Please enter your name",
+                      message: "Please enter your phone number",
                     },
                   })}
                 />
+                {errors.phonenumber && <p className="text-red-600 text-sm my-2">{errors.phonenumber.message}</p>}
               </section>
             )}
             {formStep >= 1 && (
