@@ -1,10 +1,10 @@
 import React from 'react'
-import Video from '../video/video1.mp4'
+import Video from '../video/video.mp4'
 import { Link } from 'react-scroll'
 
 const Hero = () => {
   return (
-    <section className='main-video'>
+    <section>
         <video src={Video} autoPlay loop type='video/mp4' />
     <div className=' text-white absolute w-[100%] h-[100%] top-0 flex'>
         <div className='max-w-[800px] mt-5 pt-20 w-full mx-auto text-center flex flex-col justify-center'>
