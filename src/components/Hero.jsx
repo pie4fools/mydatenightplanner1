@@ -1,5 +1,5 @@
 import React from 'react'
-import Video from '../video/video1.mp4'
+import Video from '../video/video.mp4'
 import { Link } from 'react-scroll'
 
 const Hero = () => {
