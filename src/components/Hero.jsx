@@ -1,11 +1,11 @@
 import React from 'react'
-import MyVideo from '../video/video.mp4'
+import Video from '../video/video.mp4'
 import { Link } from 'react-scroll'
 
 const Hero = () => {
   return (
     <section className='main-video'>
-        <video src={MyVideo} autoPlay playsInline loop muted type='video/mp4'/>
+        <video src={Video} autoPlay="" playsInline loop muted type='video/mp4'/>
     <div className=' text-white absolute w-[100%] h-[100%] top-0 flex'>
         <div className='max-w-[800px] mt-5 pt-20 w-full mx-auto text-center flex flex-col justify-center'>
         <h1 className='pb-20 mb-20 text-black text-2xl md:text-4xl font-serif'><span className='text-red-500 text-2xl italic lowercase'>my</span> Date Night Planner</h1>
