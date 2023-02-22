@@ -7,10 +7,12 @@ import { FaWineBottle, FaCoins } from 'react-icons/fa'
 import { GiTopHat, GiTwoCoins } from 'react-icons/gi'
 import { RiCoinFill } from 'react-icons/ri'
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import mydatelogo from '../images/mydateplanlogo.png'
 
-
-
+// Multistep form which submits json content to email of your choosing
+// Final step of the form requires payment before submission
 const Formpage = () => {
+  // Use state to handle the current number of the form. formstep and setformstep  for the form numbers, register is registering the values from the user input in JSON format
   const [formStep, setFormStep] = useState(0)
   const { register,
     formState: { errors, isValid },
@@ -19,10 +21,12 @@ const Formpage = () => {
     setFormStep(cur => cur + 1)
   }
   const renderButton = () => {
+    // If the form number is less than 3, do not show the button
     if (formStep > 3) {
       return undefined
     } else if (formStep === 3) {
       return (
+        // Final submit button to complete the last formstep
         <button
           disabled={!isValid}
           onClick={completeFormStep}
@@ -33,6 +37,7 @@ const Formpage = () => {
         </button>
       )
     } else {
+      // Otherwise, return this button if the previous conditions were not met, on click, this button will move to the next form page
       return (
         <button
           disabled={!isValid}
@@ -46,14 +51,15 @@ const Formpage = () => {
     }
   }
   return (
+    // Background and centering for the formpage
     <div className="sm:min-w-[500px] min-h-[800px] md:min-h-screen bg-red-900 flex flex-col items-start text-gray-900 antialiased relative">
       <div
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 80%, 0% 100%)",
           height: "34rem",
         }}
-        className="absolute bg-red-400 inset-x-0 top-0"
-      ></div>
+        className="absolute bg-red-400 inset-x-0 top-0">
+      </div>
       <div className="mx-auto z-10 md:mt-48 mt-28 text-center">
         <h1 className="text-white text-5xl font-thin">Plan</h1>
         <p className="text-white mt-2 italic">
@@ -385,6 +391,12 @@ const Formpage = () => {
             {renderButton()}
           </form>
         </div>
+      </div>
+      <div className="mx-auto z-10 text-center justify-center">
+        <img src={mydatelogo} className='scale-[0.5] mx-auto justify-center max-h-[150px]' alt="Logo of mydatenightplanner"></img>
+        <p className="text-white italic">
+          My Date Night Planner LLC
+        </p>
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import mydatelogo from '../images/mydateplanlogo.png'
 import { Link } from 'react-scroll'
 
 const Navbar = () => {
+    // Navbar for logo & about/plan buttons. auto sizing for mobile
     return (
     <div className='flex justify-between items-left h-20 max-w-[1240px] mx-auto px-5 text-white z-10'>
         <img

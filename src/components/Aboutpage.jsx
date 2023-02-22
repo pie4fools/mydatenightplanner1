@@ -6,6 +6,7 @@ import { GiMagnifyingGlass, GiWorld } from 'react-icons/gi'
 const Aboutpage = () => {
     
     return (
+        //   Motion for About H2 when in view hover up. Center with a max-w of 1250 flex with flexcolumn
       <div className='text-white max-w-[1250px] mt-5 w-full mx-auto flex flex-col justify-center'>
         <motion.div
         initial={{
@@ -20,6 +21,7 @@ const Aboutpage = () => {
         className=''>
             <h2 className='text-white text-4xl font-thin px-7 text-center my-5 font-serif italic'><span className='text-red-500'>A</span>bout</h2>
             </motion.div>
+            {/* Motion for P Tag you have the date now what when in view hover up */}
             <motion.div
         initial={{
             y: 200,
@@ -48,6 +50,7 @@ const Aboutpage = () => {
             <p className='text-gray-300 text-lg py-4 font-sans px-7'><span className='text-red-400'>O</span>ur dates are individualized just for you.  From first dates,  renewing the spark dates with your longtime love, or a night out with friends, we are here to make memories from first to forever.</p>
             <p className='text-gray-300 text-lg py-4 font-sans px-7'><span className='text-red-400'>W</span>e will send you a detailed plan of locations, specify dress requirements, and make reservations if necessary.</p>
             </motion.div>
+            {/* Motion for paragraphs when in view hover up */}
         <div>
         <div className='lg:flex max-w-[1250px] align-center mx-auto justify-center'>
         <motion.div
@@ -61,6 +64,7 @@ const Aboutpage = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once:true }}
         className=''>
+            {/* Motion & 1st Card Custom itineraries */}
             <div className='text-center shadow-lg p-10 rounded-xl my-10 mx-5 align-center italic bg-white'>
                 <AiOutlineSchedule size={45} className='fill-red-500 hover:animate-pulse my-6 mx-auto w-[70px] pb-0.5 z-10'/>
                 <h3 className='text-red-500 text-xl font-bold font-serif pb-4'>Custom Itineraries</h3>
@@ -78,6 +82,7 @@ const Aboutpage = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once:true }}
         className=''>
+            {/* Motion & 2nd Card Expertise */}
             <div className='text-center shadow-lg p-12 rounded-xl my-10 mx-5 bg-white italic'>
                 <GiWorld size={45} className='fill-red-500 hover:animate-pulse my-6 mx-auto w-[70px] pb-0.5 z-10'/>
                 <h3 className='text-red-500 text-xl font-bold font-serif pb-4'>Expertise</h3>
@@ -95,6 +100,7 @@ const Aboutpage = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once:true }}
         className=''>
+            {/* Motion & 3rd Card Personal Attention */}
             <div className='text-center shadow-lg p-10 rounded-xl my-10 mx-5 bg-white italic'>
                 <GiMagnifyingGlass size={45} className='fill-red-500 hover:animate-pulse my-6 mx-auto w-[70px] pb-0.5 z-10'/>
                 <h3 className='text-red-500 text-xl font-bold font-serif pb-4'>Personal Attention</h3>
