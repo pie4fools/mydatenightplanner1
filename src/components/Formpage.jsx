@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import ButtonAct from "./ButtonAct"
 import Typed from "react-typed"
 import { FcGlobe, FcHeadset, FcHome, FcLike, FcCollaboration, FcLandscape,FcLikePlaceholder, FcCloseUpMode, FcMusic, FcSportsMode, FcHighPriority, FcLock, FcConferenceCall, FcNightLandscape } from 'react-icons/fc'
-import { FaWineBottle, FaCoins } from 'react-icons/fa'
+import { FaWineBottle, FaCoins, FaSmoking } from 'react-icons/fa'
 import { GiTopHat, GiTwoCoins } from 'react-icons/gi'
 import { RiCoinFill } from 'react-icons/ri'
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
@@ -22,9 +22,9 @@ const Formpage = () => {
   }
   const renderButton = () => {
     // If the form number is less than 3, do not show the button
-    if (formStep > 3) {
+    if (formStep > 4) {
       return undefined
-    } else if (formStep === 3) {
+    } else if (formStep === 4) {
       return (
         // Final submit button to complete the last formstep
         <button
@@ -153,6 +153,7 @@ const Formpage = () => {
                 {errors.address && <p className="text-red-600 text-sm my-2">{errors.address.message}</p>}
               </section>
             )}
+            {/* Interactive buttons for interests */}
             {formStep >= 2 && (
               <section className={formStep === 2 ? "grid grid-cols-2 md:grid-cols-2 gap-1 text-center align-center -mx-5 lg:mx-0" : "hidden"}>
                 <ButtonAct icon={<FcGlobe className="mr-2"/>} htmlFor="adventure" name="Adventure"/>
@@ -311,6 +312,7 @@ const Formpage = () => {
                 />
               </section>
             )}
+            {/* Budget card with extra details */}
             {formStep >= 3 && (
               <section className={formStep === 3 ? "grid gap-4 text-center align-center justify-center mx-7" : "hidden"}>
                 {/* <h2 className="font-sans font-light text-3xl text-center align-center justify-center italic">Budget</h2> */}
@@ -353,7 +355,102 @@ const Formpage = () => {
               </section>
             )}
             {formStep >= 4 && (
-              <section className={formStep === 4 ? "block mb-9" : "hidden"}>
+              <section className={formStep === 4 ? "grid gap-4 text-center align-center justify-center mx-7" : "hidden"}>
+                {/* <h2 className="font-sans font-light text-3xl text-center align-center justify-center italic">Budget</h2> */}
+                <input
+                  id="extra"
+                  name="extra"
+                  type="text"
+                  placeholder="Details about you..."
+                  className="text-input resize text-wrap rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  {...register("extraplannerinfo", {
+                  })}
+                />
+                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinks"/>
+                <input
+                id="drinks"
+                name="drinks"
+                type="checkbox"
+                className="text-input hidden"
+                {...register("drinks", {
+                })}
+                />
+                <ButtonAct icon={<FaSmoking className="mr-3"/>} htmlFor="smoking" name="Smoking"/>
+                <input
+                id="smoking"
+                name="smoking"
+                type="checkbox"
+                className="text-input hidden"
+                {...register("smoking", {
+                })}
+                />
+                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk Taker"/>
+                <input
+                  id="risktakers"
+                  name="risktakers"
+                  type="checkbox"
+                  className="text-input hidden"
+                  {...register("risktakers", {
+                  })}
+                />
+                <input
+                  id="extra"
+                  name="extra"
+                  type="text"
+                  placeholder="Details about your date..."
+                  className="text-input rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  {...register("extradatenifo", {
+                  })}
+                />
+                <div>
+                <label
+                  for="customRange2"
+                  class="mb-2 inline-block text-neutral-700 dark:text-neutral-200"
+                  >Age</label>
+                <input
+                  type="range"
+                  class="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
+                  min="0"
+                  max="100"
+                  id="amountRange"
+                  oninput="this.form.amountInput.value=this.value" />
+		              <input type="number" name="amountInput" min="0" max="100" value="0" oninput="this.form.amountRange.value=this.value" />
+              </div>
+                <input type="range" id="rangeInput" 
+                    name="rangeInput" min="0" max="20" value={this.state.value}
+                    onChange={(e) => this.setState({value: e.target.value})} />                                                       
+                <output name="amount" id="amount">{this.state.value}</output>
+                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinks"/>
+                <input
+                id="drinks"
+                name="drinks"
+                type="checkbox"
+                className="text-input hidden"
+                {...register("drinks", {
+                })}
+                />
+                <ButtonAct icon={<FaSmoking className="mr-3"/>} htmlFor="smoking" name="Smoking"/>
+                <input
+                id="smoking"
+                name="smoking"
+                type="checkbox"
+                className="text-input hidden"
+                {...register("smoking", {
+                })}
+                />
+                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk Taker"/>
+                <input
+                  id="risktakers"
+                  name="risktakers"
+                  type="checkbox"
+                  className="text-input hidden"
+                  {...register("risktakers", {
+                  })}
+                />
+              </section>
+            )}
+            {formStep >= 5 && (
+              <section className={formStep === 5 ? "block mb-9" : "hidden"}>
                 <div className="text-center text-gray-700 mb-10 ">
                 <Typed
                 className='md:text-3xl sm:text-4xl text-xl font-md align-center justify-center mx-auto font-sans'
