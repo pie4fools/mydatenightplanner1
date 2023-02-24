@@ -65,7 +65,7 @@ const Aboutpage = () => {
         viewport={{ once:true }}
         className=''>
             {/* Motion & 1st Card Custom itineraries */}
-            <div className='text-center shadow-lg p-10 rounded-xl my-10 mx-5 align-center italic bg-white'>
+            <div className='text-center shadow-lg p-10 my-10 mx-5 align-center italic bg-white'>
                 <AiOutlineSchedule size={45} className='fill-red-500 hover:animate-pulse my-6 mx-auto w-[70px] pb-0.5 z-10'/>
                 <h3 className='text-red-500 text-xl font-bold font-serif pb-4'>Custom Itineraries</h3>
                 <p className='pb-3 text-sm text-gray-600'>A new restaurant, a local festival, a hole in the wall underground jazz club, an all night party until dawn, or an elegant night of sparkle and glitz?</p>
@@ -83,7 +83,7 @@ const Aboutpage = () => {
         viewport={{ once:true }}
         className=''>
             {/* Motion & 2nd Card Expertise */}
-            <div className='text-center shadow-lg p-12 rounded-xl my-10 mx-5 bg-white italic'>
+            <div className='text-center shadow-lg p-12 my-10 mx-5 bg-white italic'>
                 <GiWorld size={45} className='fill-red-500 hover:animate-pulse my-6 mx-auto w-[70px] pb-0.5 z-10'/>
                 <h3 className='text-red-500 text-xl font-bold font-serif pb-4'>Expertise</h3>
                 <p className='pb-7 text-sm text-gray-600'>Your date planner has spent many years being the party and date planner for friends and family. After a suggestion from her brother, she decided to share her talents with others. You are guaranteed to wow your date as you leave the planning to me!</p>
@@ -101,7 +101,7 @@ const Aboutpage = () => {
         viewport={{ once:true }}
         className=''>
             {/* Motion & 3rd Card Personal Attention */}
-            <div className='text-center shadow-lg p-10 rounded-xl my-10 mx-5 bg-white italic'>
+            <div className='text-center shadow-lg p-10 my-10 mx-5 bg-white italic'>
                 <GiMagnifyingGlass size={45} className='fill-red-500 hover:animate-pulse my-6 mx-auto w-[70px] pb-0.5 z-10'/>
                 <h3 className='text-red-500 text-xl font-bold font-serif pb-4'>Personal Attention</h3>
                 <p className='pb-3 text-sm text-gray-600'>Each date will be customized for you based on some initial information you provide.   Just as no two couples are the same, no date plan is the same.</p>

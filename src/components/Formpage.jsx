@@ -356,13 +356,13 @@ const Formpage = () => {
             )}
             {formStep >= 4 && (
               <section className={formStep === 4 ? "grid gap-4 text-center align-center justify-center mx-7" : "hidden"}>
-                {/* <h2 className="font-sans font-light text-3xl text-center align-center justify-center italic">Budget</h2> */}
-                <input
+                {/* Extra details card. Extra details input section, Age/Drinker/Risktaker buttons*/}
+                <textarea
                   id="extra"
                   name="extra"
                   type="text"
-                  placeholder="Details about you..."
-                  className="text-input resize text-wrap rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  placeholder="Age & Details about you..."
+                  className="text-input rounded-r-md text-sm border-gray-100 text-gray-400 italic rounded transition ease-in-out focus:border-blue-500 focus:outline-none"
                   {...register("extraplannerinfo", {
                   })}
                 />
@@ -393,33 +393,15 @@ const Formpage = () => {
                   {...register("risktakers", {
                   })}
                 />
-                <input
+                <textarea
                   id="extra"
                   name="extra"
-                  type="text"
-                  placeholder="Details about your date..."
-                  className="text-input rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
+                  type="textarea"
+                  placeholder="Age & Details about your date..."
+                  className="text-input rounded-r-md text-sm border-gray-100 text-gray-400 italic rounded transition ease-in-out focus:border-blue-500 focus:outline-none"
                   {...register("extradatenifo", {
                   })}
                 />
-                <div>
-                <label
-                  for="customRange2"
-                  class="mb-2 inline-block text-neutral-700 dark:text-neutral-200"
-                  >Age</label>
-                <input
-                  type="range"
-                  class="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
-                  min="0"
-                  max="100"
-                  id="amountRange"
-                  oninput="this.form.amountInput.value=this.value" />
-		              <input type="number" name="amountInput" min="0" max="100" value="0" oninput="this.form.amountRange.value=this.value" />
-              </div>
-                <input type="range" id="rangeInput" 
-                    name="rangeInput" min="0" max="20" value={this.state.value}
-                    onChange={(e) => this.setState({value: e.target.value})} />                                                       
-                <output name="amount" id="amount">{this.state.value}</output>
                 <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinks"/>
                 <input
                 id="drinks"
