@@ -7,8 +7,8 @@ function App() {
   return (
     <div>
       <Hero />
-      <Aboutpage />
       <Formpage />
+      <Aboutpage />
     </div>
   );
 }

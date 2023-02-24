@@ -7,7 +7,6 @@ import { FaWineBottle, FaCoins, FaSmoking } from 'react-icons/fa'
 import { GiTopHat, GiTwoCoins } from 'react-icons/gi'
 import { RiCoinFill } from 'react-icons/ri'
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import mydatelogo from '../images/mydateplanlogo.png'
 
 // Multistep form which submits json content to email of your choosing
 // Final step of the form requires payment before submission
@@ -89,7 +88,7 @@ const Formpage = () => {
                   type="text"
                   id="phonenumber"
                   name="phonenumber"
-                  placeholder="Phone Number"
+                  placeholder="Phone #"
                   className="text-input w-full h-12 px-4 py-1 rounded-r-md border border-gray-300 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
                   {...register("phonenumber", {
                     required: {
@@ -155,7 +154,7 @@ const Formpage = () => {
             )}
             {/* Interactive buttons for interests */}
             {formStep >= 2 && (
-              <section className={formStep === 2 ? "grid grid-cols-2 md:grid-cols-2 gap-1 text-center align-center -mx-5 lg:mx-0" : "hidden"}>
+              <section className={formStep === 2 ? "md:grid md:grid-cols-2 md:grid-cols-2 md:gap-1 text-center flex flex-col gap-2 align-center lg:mx-0" : "hidden"}>
                 <ButtonAct icon={<FcGlobe className="mr-2"/>} htmlFor="adventure" name="Adventure"/>
                 <input
                 id="adventure"
@@ -315,7 +314,7 @@ const Formpage = () => {
             {/* Budget card with extra details */}
             {formStep >= 3 && (
               <section className={formStep === 3 ? "grid gap-4 text-center align-center justify-center mx-7" : "hidden"}>
-                {/* <h2 className="font-sans font-light text-3xl text-center align-center justify-center italic">Budget</h2> */}
+                <h2 className="font-sans font-light text-md text-center align-center justify-center italic">Budget</h2>
                 <ButtonAct icon={<RiCoinFill className="mr-3 fill-yellow-400"/>} htmlFor="over25" name="$25"/>
                 <input
                   id="over25"
@@ -343,15 +342,6 @@ const Formpage = () => {
                   {...register("over100", {
                   })}
                 />
-                <input
-                  id="extra"
-                  name="extra"
-                  type="text"
-                  placeholder="Extra Details..."
-                  className="text-input rounded-r-md border border-gray-100 text-gray-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-500 focus:outline-none"
-                  {...register("extra", {
-                  })}
-                />
               </section>
             )}
             {formStep >= 4 && (
@@ -362,11 +352,11 @@ const Formpage = () => {
                   name="extra"
                   type="text"
                   placeholder="Age & Details about you..."
-                  className="text-input rounded-r-md text-sm border-gray-100 text-gray-400 italic rounded transition ease-in-out focus:border-blue-500 focus:outline-none"
+                  className="text-input rounded-r-md text-sm border-gray-100 text-gray-400 italic rounded transition ease-in-out focus:border-blue-500 focus:outline-none scrollbar-hide"
                   {...register("extraplannerinfo", {
                   })}
                 />
-                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinks"/>
+                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinking"/>
                 <input
                 id="drinks"
                 name="drinks"
@@ -384,7 +374,7 @@ const Formpage = () => {
                 {...register("smoking", {
                 })}
                 />
-                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk Taker"/>
+                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risky"/>
                 <input
                   id="risktakers"
                   name="risktakers"
@@ -398,11 +388,11 @@ const Formpage = () => {
                   name="extra"
                   type="textarea"
                   placeholder="Age & Details about your date..."
-                  className="text-input rounded-r-md text-sm border-gray-100 text-gray-400 italic rounded transition ease-in-out focus:border-blue-500 focus:outline-none"
+                  className="text-input rounded-r-md text-sm border-gray-100 text-gray-400 italic rounded transition ease-in-out focus:border-blue-500 focus:outline-none scrollbar-hide"
                   {...register("extradatenifo", {
                   })}
                 />
-                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinks"/>
+                <ButtonAct icon={<FaWineBottle className="mr-3"/>} htmlFor="drinks" name="Drinking"/>
                 <input
                 id="drinks"
                 name="drinks"
@@ -420,7 +410,7 @@ const Formpage = () => {
                 {...register("smoking", {
                 })}
                 />
-                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risk Taker"/>
+                <ButtonAct icon={<FcHighPriority className="mr-3"/>} htmlFor="risktakers" name="Risky"/>
                 <input
                   id="risktakers"
                   name="risktakers"
@@ -470,12 +460,6 @@ const Formpage = () => {
             {renderButton()}
           </form>
         </div>
-      </div>
-      <div className="mx-auto z-10 text-center justify-center">
-        <img src={mydatelogo} className='scale-[0.5] mx-auto justify-center max-h-[150px]' alt="Logo of mydatenightplanner"></img>
-        <p className="text-white italic">
-          My Date Night Planner LLC
-        </p>
       </div>
     </div>
   )

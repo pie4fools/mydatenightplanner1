@@ -2,12 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { AiOutlineSchedule } from 'react-icons/ai'
 import { GiMagnifyingGlass, GiWorld } from 'react-icons/gi'
+import mydatelogo from '../images/mydateplanlogo.png'
 
 const Aboutpage = () => {
     
     return (
         //   Motion for About H2 when in view hover up. Center with a max-w of 1250 flex with flexcolumn
-      <div className='text-white max-w-[1250px] mt-5 w-full mx-auto flex flex-col justify-center'>
+      <div className='text-white max-w-[1250px] mt-5 w-full mx-auto flex flex-col justify-center scrollbar-hide'>
         <motion.div
         initial={{
             y: 200,
@@ -109,6 +110,12 @@ const Aboutpage = () => {
             </motion.div> 
         </div>
     </div>
+    <div className="mx-auto z-10 text-center justify-center">
+        <img src={mydatelogo} className='scale-[0.5] mx-auto justify-center max-h-[150px]' alt="Logo of mydatenightplanner"></img>
+        <p className="text-white italic">
+          My Date Night Planner LLC
+        </p>
+      </div>
     </div>
   )
 }
