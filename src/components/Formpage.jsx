@@ -154,7 +154,7 @@ const Formpage = () => {
             )}
             {/* Interactive buttons for interests */}
             {formStep >= 2 && (
-              <section className={formStep === 2 ? "md:grid md:grid-cols-2 md:grid-cols-2 md:gap-1 text-center flex flex-col gap-2 align-center lg:mx-0" : "hidden"}>
+              <section className={formStep === 2 ? "md:grid md:grid-cols-2 mx-7 md:gap-1 text-center flex flex-col gap-2 align-center lg:mx-0" : "hidden"}>
                 <ButtonAct icon={<FcGlobe className="mr-2"/>} htmlFor="adventure" name="Adventure"/>
                 <input
                 id="adventure"
